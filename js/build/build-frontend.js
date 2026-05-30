@@ -33428,7 +33428,7 @@
     a.nmd = e => (e.paths = [],
     e.children || (e.children = []),
     e),
-    a.p = "/js/build/",
+    a.p = "js/build/",
     ( () => {
         if ("undefined" != typeof document) {
             var e = {
