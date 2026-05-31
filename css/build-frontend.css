@@ -14501,7 +14501,7 @@ body.full-height .wrap .content .container {
 
 @media(max-width: 768px) {
     .advert__info {
-        grid-template-areas:"header" "description" "video-player";
+        grid-template-areas:"header" "contacts" "description" "video-player";
         grid-column: 1
     }
 
@@ -14574,7 +14574,7 @@ body.full-height .wrap .content .container {
 
 .advert__contacts {
     grid-area: contacts;
-    display: none
+    display: block
 }
 
 @media(min-width: 768px) {
