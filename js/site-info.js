@@ -22,8 +22,8 @@
       {
         id: "telegram",
         label: "Telegram",
-        value: "+12144298973",
-        url: "https://t.me/+12144298973",
+        value: "@Ruby0036",
+        url: "https://t.me/Ruby0036",
       },
       {
         id: "signal",
