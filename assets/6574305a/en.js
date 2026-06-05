@@ -1,0 +1,1 @@
+window.yii = window.yii || {};

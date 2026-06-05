@@ -33349,7 +33349,7 @@
         6089: "60df423183354b67b463",
         6161: "08e5d5931b1816a6884d",
         6181: "c47ccdbe2641aeabe31e",
-        6517: "c13688a8cf4dec57a290",
+        6517: "c72ab0e98dcfb48bb15c",
         6620: "d82635d010e2696d2d56",
         6845: "646829dd7502b26563a3",
         6943: "96cac2b8686d3c62aa30",
@@ -35853,7 +35853,7 @@
         }
         );
         const ce = document.querySelector(".advert-create-review-placeholder");
-        ce && Promise.all([a.e(6943), a.e(4216), a.e(124), a.e(9072), a.e(468), a.e(2404), a.e(2417), a.e(1737), a.e(3731), a.e(6161), a.e(5487), a.e(2516), a.e(6517)]).then(a.bind(a, 36517)).then(e => {
+        ce && Promise.all([a.e(6943), a.e(4216), a.e(124), a.e(9072), a.e(468), a.e(2404), a.e(2417), a.e(1737), a.e(3731), a.e(6161), a.e(5487), a.e(2516), a.e(3106), a.e(6517)]).then(a.bind(a, 36517)).then(e => {
             e.initAdvertCreateReviewPlaceholder(ce)
         }
         );

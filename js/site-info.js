@@ -178,6 +178,117 @@
 
   initContactDrawer();
 
+  function initQuickChatWidget() {
+    const launcher = document.querySelector("[data-quick-chat-launcher]");
+    const widget = document.querySelector("[data-quick-chat-widget]");
+    const menu = document.querySelector("[data-quick-chat-menu]");
+    const panel = document.querySelector("[data-quick-chat-panel]");
+    const messages = document.querySelector("[data-quick-chat-messages]");
+    const form = document.querySelector("[data-quick-chat-form]");
+    const input = document.querySelector("[data-quick-chat-input]");
+
+    if (
+      !launcher ||
+      !widget ||
+      !menu ||
+      !panel ||
+      !messages ||
+      !form ||
+      !input
+    ) {
+      return;
+    }
+
+    function closeWidget() {
+      widget.hidden = true;
+      menu.hidden = false;
+      panel.hidden = true;
+    }
+
+    function openMenu() {
+      widget.hidden = false;
+      menu.hidden = false;
+      panel.hidden = true;
+    }
+
+    function openPanel() {
+      widget.hidden = false;
+      menu.hidden = true;
+      panel.hidden = false;
+      input.focus();
+    }
+
+    function appendMessage(text, className) {
+      const message = document.createElement("div");
+      message.className = "quick-chat-message " + className;
+      message.textContent = text;
+      messages.appendChild(message);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    launcher.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      if (widget.hidden) {
+        openMenu();
+      } else {
+        closeWidget();
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      if (event.target.closest("[data-booking-code-option]")) {
+        window.location.href = "https://ladys-one.onrender.com/";
+        return;
+      }
+
+      if (event.target.closest("[data-chat-option]")) {
+        openPanel();
+        return;
+      }
+
+      if (event.target.closest("[data-quick-chat-close]")) {
+        closeWidget();
+        return;
+      }
+
+      if (
+        !widget.hidden &&
+        !event.target.closest("[data-quick-chat-widget]") &&
+        !event.target.closest("[data-quick-chat-launcher]")
+      ) {
+        closeWidget();
+      }
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const text = input.value.trim();
+      if (!text) {
+        return;
+      }
+
+      appendMessage(text, "quick-chat-message_user");
+      input.value = "";
+
+      window.setTimeout(function () {
+        appendMessage(
+          "Thanks for your message. Ruby Support will reply shortly.",
+          "quick-chat-message_support",
+        );
+      }, 500);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeWidget();
+      }
+    });
+  }
+
+  initQuickChatWidget();
+
   fetch(apiUrl)
     .then(function (response) {
       if (!response.ok) {
