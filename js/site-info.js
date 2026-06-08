@@ -274,7 +274,7 @@
 
       window.setTimeout(function () {
         appendMessage(
-          "Thanks for your message. Ruby Support will reply shortly.",
+          "Thanks for your message. Support will reply shortly.",
           "quick-chat-message_support",
         );
       }, 500);
